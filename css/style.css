@@ -1,0 +1,94 @@
+/* ============================================
+   MEDICA CERTO — Main Styles
+   ============================================ */
+
+/* ── Utilities ── */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* ── Buttons ── */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.75rem;
+    transition: background-color 150ms ease,
+        box-shadow 150ms ease,
+        transform 150ms ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn--primary {
+    background-color: var(--color-primary-600);
+    color: var(--color-text-inverse);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.btn--primary:hover {
+    background-color: var(--color-primary-700);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.btn--secondary {
+    background-color: var(--color-neutral-0);
+    color: var(--color-primary-700);
+    border: 2px solid var(--color-primary-600);
+}
+
+.btn--secondary:hover {
+    background-color: var(--color-primary-50);
+}
+
+.btn--lg {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    border-radius: 1rem;
+}
+
+/* ── Sections ── */
+
+.section {
+    padding-block: 5rem;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 768px) {
+    .container {
+        padding-inline: 1rem;
+    }
+
+    .section {
+        padding-block: 3rem;
+    }
+}
