@@ -61,8 +61,68 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.fromTo(el, { x: -4 }, { x: 0, duration: 0.5, ease: 'elastic.out(1, 0.3)' });
     }
 
+    /* ── Email error helpers ── */
+    function showEmailError(msg) {
+        const el = document.getElementById('email-error');
+        if (el) { el.textContent = msg; el.removeAttribute('hidden'); }
+    }
+
+    function clearEmailError() {
+        const el = document.getElementById('email-error');
+        if (el) { el.textContent = ''; el.setAttribute('hidden', ''); }
+    }
+
+    /* ── Check if email already exists in Supabase ── */
+    async function checkEmailExists(email) {
+        try {
+            const res = await fetch(
+                `${SUPABASE_URL}/rest/v1/form_submissions?email=eq.${encodeURIComponent(email)}&select=email`,
+                {
+                    headers: {
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                    },
+                }
+            );
+            if (!res.ok) return false;
+            const data = await res.json();
+            return data.length > 0;
+        } catch {
+            return false;
+        }
+    }
+
+    /* ── Generate unique raffle number ── */
+    async function generateRaffleNumber() {
+        let existingNumbers = new Set();
+        try {
+            const res = await fetch(
+                `${SUPABASE_URL}/rest/v1/form_submissions?select=raffle_number&raffle_number=not.is.null`,
+                {
+                    headers: {
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                    },
+                }
+            );
+            if (res.ok) {
+                const data = await res.json();
+                existingNumbers = new Set(data.map((r) => r.raffle_number));
+            }
+        } catch {
+            // Continue with empty set
+        }
+
+        let number;
+        do {
+            number = Math.floor(Math.random() * 900000) + 100000;
+        } while (existingNumbers.has(number));
+
+        return number;
+    }
+
     /* ── Step navigation ── */
-    function goToStep(index, direction) {
+    async function goToStep(index, direction) {
         if (index < 0 || index >= steps.length) return;
 
         const oldStep = steps[currentStep];
@@ -70,9 +130,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const xOut = direction === 'forward' ? -40 : 40;
         const xIn = direction === 'forward' ? 40 : -40;
 
-        // If going to reward step (2), auto-submit
+        // If going to reward step (2), generate raffle + submit
         if (index === 2 && !formSubmitted) {
-            submitForm();
+            await submitForm();
         }
 
         // Animate out
@@ -115,13 +175,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function animateCelebration(step) {
         const celebration = step.querySelector('.form-page__celebration');
         const checkEl = step.querySelector('.form-page__celebration-check');
-        const rewardCard = step.querySelector('.form-page__reward-card');
+        const raffleCard = step.querySelector('.form-page__raffle-card');
+        const rewardActions = step.querySelector('.form-page__reward-actions');
         const h1 = celebration.querySelector('h1');
         const p = celebration.querySelector('p');
 
         // Reset & show step
         gsap.set(step, { x: 0, opacity: 1 });
-        gsap.set([celebration, rewardCard], { opacity: 0 });
+        gsap.set([celebration, raffleCard, rewardActions].filter(Boolean), { opacity: 0 });
 
         // 1. Fade in celebration
         gsap.to(celebration, { opacity: 1, duration: 0.3, delay: 0.1 });
@@ -138,11 +199,21 @@ document.addEventListener('DOMContentLoaded', () => {
         // 4. Launch confetti
         setTimeout(() => launchConfetti(), 600);
 
-        // 5. Slide in reward card
-        gsap.fromTo(rewardCard,
-            { y: 40, opacity: 0, scale: 0.95 },
-            { y: 0, opacity: 1, scale: 1, duration: 0.6, ease: 'power3.out', delay: 1.0 }
-        );
+        // 5. Slide in raffle card
+        if (raffleCard) {
+            gsap.fromTo(raffleCard,
+                { y: 40, opacity: 0, scale: 0.95 },
+                { y: 0, opacity: 1, scale: 1, duration: 0.6, ease: 'power3.out', delay: 1.0 }
+            );
+        }
+
+        // 6. Slide in action buttons
+        if (rewardActions) {
+            gsap.fromTo(rewardActions,
+                { y: 30, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.5, ease: 'power3.out', delay: 1.4 }
+            );
+        }
     }
 
     /* ── Confetti ── */
@@ -209,6 +280,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (formSubmitted) return;
         formSubmitted = true;
 
+        // Generate unique raffle number
+        const raffleNumber = await generateRaffleNumber();
+
+        // Display raffle number in the UI immediately
+        const raffleEl = document.getElementById('raffle-number');
+        if (raffleEl) raffleEl.textContent = '#' + String(raffleNumber).padStart(6, '0');
+
         const formData = {
             name: document.querySelector('#field-name').value.trim(),
             email: document.querySelector('#field-email').value.trim(),
@@ -216,6 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
             q2_protocolos_conitec: document.querySelector('input[name="q2"]:checked')?.value || '',
             q3_falta_ferramentas: document.querySelector('input[name="q3"]:checked')?.value || '',
             q4_importancia_ferramenta: document.querySelector('input[name="q4"]:checked')?.value || '',
+            raffle_number: raffleNumber,
             submitted_at: new Date().toISOString(),
         };
 
@@ -253,14 +332,65 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ── Event Listeners ── */
+    const formEl = document.getElementById('form-medicacerto');
+
     nextBtns.forEach((btn) => {
-        btn.addEventListener('click', () => {
-            if (validateStep(currentStep)) {
-                const nextIndex = parseInt(btn.dataset.next, 10);
-                goToStep(nextIndex, 'forward');
+        // Skip submit button — handled by form submit event
+        if (btn.type === 'submit') return;
+
+        btn.addEventListener('click', async () => {
+            if (!validateStep(currentStep)) return;
+
+            const nextIndex = parseInt(btn.dataset.next, 10);
+
+            // Email duplicate check before leaving step 0
+            if (currentStep === 0) {
+                const email = document.querySelector('#field-email').value.trim();
+
+                // Loading state
+                btn.style.pointerEvents = 'none';
+                btn.style.opacity = '0.7';
+
+                const exists = await checkEmailExists(email);
+
+                btn.style.pointerEvents = '';
+                btn.style.opacity = '';
+
+                if (exists) {
+                    showEmailError('Este e-mail já está cadastrado.');
+                    shakeField(document.querySelector('#field-email'));
+                    return;
+                }
+
+                clearEmailError();
             }
+
+            goToStep(nextIndex, 'forward');
         });
     });
+
+    /* ── Form submit (Finalizar button) ── */
+    if (formEl) {
+        formEl.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            if (!validateStep(currentStep)) return;
+
+            const submitBtn = document.getElementById('btn-submit');
+            if (submitBtn) {
+                submitBtn.style.pointerEvents = 'none';
+                submitBtn.style.opacity = '0.7';
+            }
+
+            const nextIndex = parseInt(submitBtn?.dataset.next, 10) || 2;
+            await goToStep(nextIndex, 'forward');
+
+            if (submitBtn) {
+                submitBtn.style.pointerEvents = '';
+                submitBtn.style.opacity = '';
+            }
+        });
+    }
 
     backBtns.forEach((btn) => {
         btn.addEventListener('click', () => {
