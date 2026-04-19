@@ -34,7 +34,7 @@
     <meta name="twitter:image" content="https://medicacerto.com.br/assets/open-graph.png">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="./assets/svg-logos/medicacerto-icon-green.svg">
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon.png">
 
@@ -42,18 +42,224 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="./css/tokens.css">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/hero.css">
+    <link rel="stylesheet" href="./css/solution.css">
+    <link rel="stylesheet" href="./css/process.css">
+    <link rel="stylesheet" href="./css/cta.css">
 </head>
 
 <body>
 
-    <!-- Sections will be added in next steps -->
+    <!-- ════ HERO ════ -->
+    <section id="hero" class="hero">
+        <div class="hero__bg"></div>
+        <main class="hero__container">
+            <header class="hero__container-header">
+                <img src="./assets/png-logos/medicacerto-logo-white.png" alt="Logo da Medica Certo"
+                    class="hero__container-header-logo">
+                <ul>
+                    <li><a href="#hero">Início</a></li>
+                    <li><a href="#solution">Solução</a></li>
+                    <li><a href="#process">Processo</a></li>
+                </ul>
+                <button>
+                    <div>
+                        <span>Testar agora</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" fill="none">
+                            <path
+                                d="M16.3887 0.703125V12.8906C16.3887 13.0771 16.3146 13.2559 16.1828 13.3878C16.0509 13.5197 15.8721 13.5938 15.6856 13.5938C15.4991 13.5938 15.3203 13.5197 15.1884 13.3878C15.0565 13.2559 14.9825 13.0771 14.9825 12.8906V2.4L1.18246 16.2C1.04917 16.3242 0.872879 16.3918 0.690722 16.3886C0.508564 16.3854 0.334765 16.3116 0.20594 16.1828C0.0771158 16.0539 0.0033235 15.8801 0.000109544 15.698C-0.00310441 15.5158 0.0645108 15.3395 0.188711 15.2062L13.9887 1.40625H3.49809C3.31161 1.40625 3.13276 1.33217 3.0009 1.20031C2.86904 1.06845 2.79496 0.889605 2.79496 0.703125C2.79496 0.516645 2.86904 0.337802 3.0009 0.20594C3.13276 0.0740789 3.31161 0 3.49809 0H15.6856C15.8721 0 16.0509 0.0740789 16.1828 0.20594C16.3146 0.337802 16.3887 0.516645 16.3887 0.703125Z"
+                                fill="#F1F2F4" />
+                        </svg>
+                    </div>
+                </button>
+            </header>
+            <div class="hero__container-texts">
+                <h1 class="hero__container-texts-title">
+                    Pare de sofrer com sistemas <strong>confusos</strong> do governo
+                </h1>
+                <p>
+                    A <strong>MedicaCerto</strong> está desenvolvendo uma solução que visa ajudar médicos em todo o
+                    Brasil a encontrar o que precisam de forma fácil.
+                </p>
+            </div>
+            <div class="hero__container-mockup">
+                <img src="./assets/svg-logos/medicacerto-icon-white.svg" alt="Ícone da Medica Certo" class="hero__container-mockup-bg">
+                <img src="./assets/mockup-hero.png" alt="Mockup da aplicação Medica Certo"
+                    class="hero__container-mockup-image">
+            </div>
+        </main>
+    </section>
+
+    <!-- ════ SOLUTION ════ -->
+    <section id="solution" class="solution section">
+        <main class="solution__container">
+            <div class="solution__container-texts">
+                <h1 class="hero__container-texts-title">
+                    Estamos <strong>construindo</strong> um sistema simples e funcional para você
+                </h1>
+                <p>
+                    Pensando nesse problema, estudamos uma solução para facilitar e melhorar a gestão de laudos médicos
+                </p>
+            </div>
+            <aside class="hero__container-grid">
+                <div class="hero__container-grid-item">
+                    <div class="hero__container-grid-item-mockups">
+                        <img src="./assets/mockup-solucao-01.png" alt="Mockup da aplicação Medica Certo">
+                        <img src="./assets/mockup-solucao-01.png" alt="Mockup da aplicação Medica Certo">
+                    </div>
+                    <div class="hero__container-grid-item-texts">
+                        <div class="hero__container-grid-item-texts-badge">
+                            <span>Tudo em um só lugar</span>
+                        </div>
+                        <h1 class="hero__container-grid-item-texts-title">
+                            Grade com <strong>todas</strong> as opções que você precisa
+                        </h1>
+                        <p class="hero__container-grid-item-texts-description">
+                            Além da opção de consulta, você desfruta de opções de conversa integradas com IA, buscas de
+                            CID-10, bulas, receitas e muito mais!
+                        </p>
+                        <button>
+                            <div>
+                                <span>Testar agora</span>
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" fill="none">
+                                    <path
+                                        d="M16.3887 0.703125V12.8906C16.3887 13.0771 16.3146 13.2559 16.1828 13.3878C16.0509 13.5197 15.8721 13.5938 15.6856 13.5938C15.4991 13.5938 15.3203 13.5197 15.1884 13.3878C15.0565 13.2559 14.9825 13.0771 14.9825 12.8906V2.4L1.18246 16.2C1.04917 16.3242 0.872879 16.3918 0.690722 16.3886C0.508564 16.3854 0.334765 16.3116 0.20594 16.1828C0.0771158 16.0539 0.0033235 15.8801 0.000109544 15.698C-0.00310441 15.5158 0.0645108 15.3395 0.188711 15.2062L13.9887 1.40625H3.49809C3.31161 1.40625 3.13276 1.33217 3.0009 1.20031C2.86904 1.06845 2.79496 0.889605 2.79496 0.703125C2.79496 0.516645 2.86904 0.337802 3.0009 0.20594C3.13276 0.0740789 3.31161 0 3.49809 0H15.6856C15.8721 0 16.0509 0.0740789 16.1828 0.20594C16.3146 0.337802 16.3887 0.516645 16.3887 0.703125Z"
+                                        fill="#F1F2F4" />
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div class="hero__container-grid-item">
+                    <div class="hero__container-grid-item-texts">
+                        <div class="hero__container-grid-item-texts-badge">
+                            <span>Fácil e funcional</span>
+                        </div>
+                        <h1 class="hero__container-grid-item-texts-title">
+                            Acesso ao que <strong>precisar</strong> com apenas 1 Clique
+                        </h1>
+                        <p class="hero__container-grid-item-texts-description">
+                            Com um método de busca simples, você consegue achar o que precisar em apenas um clique em
+                            buscar
+                        </p>
+                        <button>
+                            <div>
+                                <span>Testar agora</span>
+                            </div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" fill="none">
+                                    <path
+                                        d="M16.3887 0.703125V12.8906C16.3887 13.0771 16.3146 13.2559 16.1828 13.3878C16.0509 13.5197 15.8721 13.5938 15.6856 13.5938C15.4991 13.5938 15.3203 13.5197 15.1884 13.3878C15.0565 13.2559 14.9825 13.0771 14.9825 12.8906V2.4L1.18246 16.2C1.04917 16.3242 0.872879 16.3918 0.690722 16.3886C0.508564 16.3854 0.334765 16.3116 0.20594 16.1828C0.0771158 16.0539 0.0033235 15.8801 0.000109544 15.698C-0.00310441 15.5158 0.0645108 15.3395 0.188711 15.2062L13.9887 1.40625H3.49809C3.31161 1.40625 3.13276 1.33217 3.0009 1.20031C2.86904 1.06845 2.79496 0.889605 2.79496 0.703125C2.79496 0.516645 2.86904 0.337802 3.0009 0.20594C3.13276 0.0740789 3.31161 0 3.49809 0H15.6856C15.8721 0 16.0509 0.0740789 16.1828 0.20594C16.3146 0.337802 16.3887 0.516645 16.3887 0.703125Z"
+                                        fill="#F1F2F4" />
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="hero__container-grid-item-mockups">
+                        <img src="./assets/mockup-hero.png" alt="Mockup da aplicação Medica Certo">
+                    </div>
+                </div>
+            </aside>
+        </main>
+    </section>
+
+    <!-- ════ PROCESS ════ -->
+    <section id="process" class="process section">
+        <main class="process__container">
+            <div class="process__container-texts">
+                <h1 class="process__container-texts-title">
+                    E o melhor, o <strong>processo</strong> será simples e eficaz, pensado para você
+                </h1>
+                <p class="process__container-texts-description">
+                    Além de trazermos uma interface simples e intuitiva, pensamos em um processo fácil para você ter o
+                    que procura
+                </p>
+            </div>
+            <div class="process__container-steps">
+
+                <div class="process__container-steps-progress-line"></div> <!-- Linha de progresso entre os passos -->
+
+                <div class="process__container-steps-item">
+                    <img src="./assets/mockup-search.png" alt="Mockup da aplicação Medica Certo">
+                    <div class="process__container-steps-item-texts">
+                        <div class="process__container-steps-item-texts-badge">
+                            <span>Acesso</span>
+                        </div>
+                        <h1 class="process__container-steps-item-texts-title">
+                            <strong>Acesse</strong> nosso site
+                        </h1>
+                        <p class="process__container-steps-item-texts-description">
+                            Disponibilizaremos um link para acesso, na qual você irá precisar apenas clicar e acessar
+                        </p>
+                    </div>
+                </div>
+                <div class="process__container-steps-item">
+                    <div class="process__container-steps-item-texts">
+                        <div class="process__container-steps-item-texts-badge">
+                            <span>Seleção</span>
+                        </div>
+                        <h1 class="process__container-steps-item-texts-title">
+                            <strong>Selecione</strong> a opção desejada
+                        </h1>
+                        <p class="process__container-steps-item-texts-description">
+                            Selecione o que você precisa e tenha acesso a diversas opções
+                        </p>
+                    </div>
+                    <img src="./assets/mockup-options.png" alt="Mockup da aplicação Medica Certo">
+                </div>
+                <div class="process__container-steps-item">
+                    <img src="./assets/mockup-search-diretriz.png" alt="Mockup da aplicação Medica Certo">
+                    <div class="process__container-steps-item-texts">
+                        <div class="process__container-steps-item-texts-badge">
+                            <span>Resultado</span>
+                        </div>
+                        <h1 class="process__container-steps-item-texts-title">
+                            <strong>Pesquise</strong> e acesse o resultado
+                        </h1>
+                        <p class="process__container-steps-item-texts-description">
+                            Resultado seguro e confiável, usando a base de dados oficial
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <!-- ════ CTA ════ -->
+    <section id="cta" class="cta section">
+        <main class="cta__container">
+            <h1 class="cta__container-title">
+                Teste <strong>agora</strong> como irá funcionar, clique no botão abaixo e teste!
+            </h1>
+            <p class="cta__container-description">
+                Apoie o projeto, para que você possa usufruir desse projeto incrivel em breve, sua contribuição é muito
+                importante
+            </p>
+            <button>
+                <div>
+                    <span>Testar agora</span>
+                </div>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" fill="none">
+                        <path
+                            d="M16.3887 0.703125V12.8906C16.3887 13.0771 16.3146 13.2559 16.1828 13.3878C16.0509 13.5197 15.8721 13.5938 15.6856 13.5938C15.4991 13.5938 15.3203 13.5197 15.1884 13.3878C15.0565 13.2559 14.9825 13.0771 14.9825 12.8906V2.4L1.18246 16.2C1.04917 16.3242 0.872879 16.3918 0.690722 16.3886C0.508564 16.3854 0.334765 16.3116 0.20594 16.1828C0.0771158 16.0539 0.0033235 15.8801 0.000109544 15.698C-0.00310441 15.5158 0.0645108 15.3395 0.188711 15.2062L13.9887 1.40625H3.49809C3.31161 1.40625 3.13276 1.33217 3.0009 1.20031C2.86904 1.06845 2.79496 0.889605 2.79496 0.703125C2.79496 0.516645 2.86904 0.337802 3.0009 0.20594C3.13276 0.0740789 3.31161 0 3.49809 0H15.6856C15.8721 0 16.0509 0.0740789 16.1828 0.20594C16.3146 0.337802 16.3887 0.516645 16.3887 0.703125Z"
+                            fill="#F1F2F4" />
+                    </svg>
+                </div>
+            </button>
+        </main>
+    </section>
 
     <!-- Scripts -->
     <script src="./js/main.js" defer></script>

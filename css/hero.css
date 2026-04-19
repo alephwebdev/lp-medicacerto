@@ -1,0 +1,183 @@
+/* ════ Hero ════ */
+
+.hero {
+    max-width: 1600px;
+    margin-inline: auto;
+    padding: 48px 48px 10px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+
+    @media (max-width: 768px) {
+        padding: 32px 32px 10px 32px;
+    }
+
+    &>.hero__bg {
+        width: calc(100% - 20px);
+        height: calc(100% - 20px);
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: var(--color-primary-700);
+        border-radius: 48px;
+        z-index: -1;
+
+        @media (max-width: 768px) {
+            border-radius: 24px;
+        }
+    }
+
+    &>.hero__container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 72px;
+
+        @media (max-width: 768px) {
+            gap: 48px;
+        }
+
+        &>.hero__container-header {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+
+
+            &>img {
+                width: 220px;
+                object-fit: contain;
+
+                @media (max-width: 768px) {
+                    width: 140px;
+                }
+            }
+
+            &>ul {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                gap: 12px;
+
+                @media (max-width: 768px) {
+                    display: none;
+                }
+
+                &>li {
+                    padding: 12px;
+                    
+                    &>a {
+                        font-size: 18px;
+                        color: var(--color-neutral-0);
+                        font-weight: 400;
+                        font-family: var(--font-family-primary);
+                        letter-spacing: -0.04em;
+                    }
+                }
+            }
+
+            &>button {
+
+                &>div {
+                    background-color: var(--color-neutral-0);
+                    color: var(--color-primary-700);
+
+                    &>span {}
+
+                    &>svg {
+                        color: var(--color-primary-700);
+                        fill: var(--color-primary-700);
+                    }
+                }
+            }
+        }
+
+        &>.hero__container-texts {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 24px;
+
+            &>h1 {
+                max-width: 800px;
+                text-align: center;
+                font-size: 62px;
+                line-height: 100%;
+                letter-spacing: -0.04em;
+                color: var(--color-neutral-0);
+                font-weight: 500;
+                font-family: var(--font-family-primary);
+
+                @media (max-width: 768px) {
+                    font-size: 38px;
+                }
+
+                &>strong {}
+            }
+
+            &>p {
+                max-width: 600px;
+                text-align: center;
+                font-size: 18px;
+                line-height: 1.2;
+                letter-spacing: -0.02em;
+                color: var(--color-neutral-400);
+                font-weight: 300;
+                font-family: var(--font-family-primary);
+
+                @media (max-width: 768px) {
+                    font-size: 16px;
+                }
+
+                &>strong {
+                    color: var(--color-neutral-0);
+                }
+            }
+        }
+
+        &>.hero__container-mockup {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            height: 480px;
+
+            @media (max-width: 768px) {
+                height: 420px;
+                width: 80%;
+            }
+
+            &>.hero__container-mockup-bg {
+                position: absolute;
+                left: 50%;
+                top: 0;
+                transform: translateX(-50%);
+                z-index: 1;
+                object-fit: contain;
+                width: 1000px!important;
+                opacity: 0.2;
+
+                @media (max-width: 768px) {
+                    width: 1800px!important;
+                }
+            }
+
+            &>img {
+                z-index: 2;
+            }
+        }
+    }
+}

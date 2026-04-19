@@ -1,0 +1,31 @@
+/* ════ CTA ════ */
+
+.cta {
+    max-width: 1600px;
+    margin-inline: auto;
+    padding: 48px;
+
+    @media (max-width: 768px) {
+        padding: 24px;
+    }
+
+    &>.cta__container {
+
+        &>h1 {
+
+            &>strong {}
+        }
+
+        &>p {}
+
+        &>button {
+
+            &>div {
+
+                &>span {}
+
+                &>svg {}
+            }
+        }
+    }
+}

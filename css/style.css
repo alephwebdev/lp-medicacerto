@@ -23,56 +23,70 @@
     border-width: 0;
 }
 
+/* ── Typography ── */
+
+h1 strong,
+h2 strong,
+h3 strong {
+    font-family: var(--font-family-accent);
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+}
+
+p strong {
+    font-weight: 700;
+}
+
 /* ── Buttons ── */
 
-.btn {
-    display: inline-flex;
+button {
+    display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    font-weight: 600;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: 0.75rem;
-    transition: background-color 150ms ease,
-        box-shadow 150ms ease,
-        transform 150ms ease;
-}
+    gap: -2px;
+    cursor: pointer;
 
-.btn:hover {
-    transform: translateY(-1px);
-}
+    &>div:first-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 56px;
+        padding: 0 32px;
+        background-color: var(--color-primary-800);
+        border-radius: 9999px;
+        color: #F1F2F4;
+        font-family: var(--font-family-primary);
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        white-space: nowrap;
 
-.btn:active {
-    transform: translateY(0);
-}
+        @media (max-width: 768px) {
+            height: 48px;
+            padding: 0 24px;
+            font-size: 0.875rem;
+        }
+    }
 
-.btn--primary {
-    background-color: var(--color-primary-600);
-    color: var(--color-text-inverse);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
-}
+    &>div:last-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 56px;
+        height: 56px;
+        background-color: var(--color-primary-800);
+        border-radius: 50%;
 
-.btn--primary:hover {
-    background-color: var(--color-primary-700);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
-}
+        @media (max-width: 768px) {
+            width: 48px;
+            height: 48px;
+        }
 
-.btn--secondary {
-    background-color: var(--color-neutral-0);
-    color: var(--color-primary-700);
-    border: 2px solid var(--color-primary-600);
-}
-
-.btn--secondary:hover {
-    background-color: var(--color-primary-50);
-}
-
-.btn--lg {
-    padding: 1rem 2rem;
-    font-size: 1.125rem;
-    border-radius: 1rem;
+        &>svg {
+            width: 17px;
+            height: 17px;
+        }
+    }
 }
 
 /* ── Sections ── */

@@ -1,0 +1,49 @@
+/* ════ Process ════ */
+
+.process {
+    max-width: 1600px;
+    margin-inline: auto;
+    padding: 48px;
+
+    @media (max-width: 768px) {
+        padding: 24px;
+    }
+
+    &>.process__container {
+
+        &>.process__container-texts {
+
+            &>h1 {
+
+                &>strong {}
+            }
+
+            &>p {}
+        }
+
+        &>.process__container-steps {
+
+            &>.process__container-steps-progress-line {}
+
+            &>.process__container-steps-item {
+
+                &>img {}
+
+                &>.process__container-steps-item-texts {
+
+                    &>.process__container-steps-item-texts-badge {
+
+                        &>span {}
+                    }
+
+                    &>h1 {
+
+                        &>strong {}
+                    }
+
+                    &>p {}
+                }
+            }
+        }
+    }
+}
