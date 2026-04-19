@@ -45,26 +45,36 @@ button {
     align-items: center;
     gap: -2px;
     cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.3s ease;
+
+    &:hover {
+        transform: scale(1.03);
+    }
+
+    &:active {
+        transform: scale(0.97);
+    }
 
     &>div:first-child {
         display: flex;
         align-items: center;
         justify-content: center;
         height: 56px;
-        padding: 0 32px;
+        padding: 0px 22px;
         background-color: var(--color-primary-800);
         border-radius: 9999px;
         color: #F1F2F4;
         font-family: var(--font-family-primary);
-        font-size: 1rem;
-        font-weight: 400;
-        letter-spacing: 0.02em;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: -0.04em;
         white-space: nowrap;
+        transition: background-color 0.3s ease;
 
         @media (max-width: 768px) {
-            height: 48px;
-            padding: 0 24px;
-            font-size: 0.875rem;
+            height: 42px;
+            padding: 0 18px;
+            font-size: 14px;
         }
     }
 
@@ -76,33 +86,43 @@ button {
         height: 56px;
         background-color: var(--color-primary-800);
         border-radius: 50%;
+        transition: background-color 0.3s ease, transform 0.3s ease;
 
         @media (max-width: 768px) {
-            width: 48px;
-            height: 48px;
+            width: 42px;
+            height: 42px;
         }
 
         &>svg {
             width: 17px;
             height: 17px;
+            transition: transform 0.3s ease;
+
+            @media (max-width: 768px) {
+                width: 14px;
+                height: 14px;
+            }
+        }
+
+        &:hover>div:last-child>svg {
+            transform: translate(2px, -2px);
         }
     }
-}
 
-/* ── Sections ── */
-
-.section {
-    padding-block: 5rem;
-}
-
-/* ── Responsive ── */
-
-@media (max-width: 768px) {
-    .container {
-        padding-inline: 1rem;
-    }
+    /* ── Sections ── */
 
     .section {
-        padding-block: 3rem;
+        padding-block: 5rem;
     }
-}
+
+    /* ── Responsive ── */
+
+    @media (max-width: 768px) {
+        .container {
+            padding-inline: 1rem;
+        }
+
+        .section {
+            padding-block: 3rem;
+        }
+    }

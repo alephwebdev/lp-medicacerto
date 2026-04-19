@@ -48,6 +48,12 @@
             justify-content: space-between;
             position: relative;
 
+            @media (max-width: 768px) {
+                flex-direction: column;
+                gap: 24px;
+                margin-top: 12px;
+            }
+
 
             &>img {
                 width: 220px;
@@ -74,18 +80,44 @@
 
                 &>li {
                     padding: 12px;
-                    
+
                     &>a {
                         font-size: 18px;
                         color: var(--color-neutral-0);
                         font-weight: 400;
                         font-family: var(--font-family-primary);
                         letter-spacing: -0.04em;
+                        text-decoration: none;
+                        position: relative;
+                        transition: opacity 0.3s ease;
+
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            left: 0;
+                            bottom: -2px;
+                            width: 0;
+                            height: 1.5px;
+                            background-color: var(--color-neutral-0);
+                            border-radius: 99px;
+                            transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                        }
+
+                        &:hover::after {
+                            width: 100%;
+                        }
+
+                        &:hover {
+                            opacity: 0.85;
+                        }
                     }
                 }
             }
 
             &>button {
+                @media (max-width: 768px) {
+                    display: none;
+                }
 
                 &>div {
                     background-color: var(--color-neutral-0);
@@ -95,7 +127,10 @@
 
                     &>svg {
                         color: var(--color-primary-700);
-                        fill: var(--color-primary-700);
+
+                        &>path {
+                            fill: currentColor;
+                        }
                     }
                 }
             }
@@ -120,7 +155,7 @@
                 font-family: var(--font-family-primary);
 
                 @media (max-width: 768px) {
-                    font-size: 38px;
+                    font-size: 34px;
                 }
 
                 &>strong {}
@@ -131,10 +166,10 @@
                 text-align: center;
                 font-size: 18px;
                 line-height: 1.2;
-                letter-spacing: -0.02em;
-                color: var(--color-neutral-400);
+                letter-spacing: -0.01em;
+                color: var(--color-neutral-300);
                 font-weight: 300;
-                font-family: var(--font-family-primary);
+                font-family: var(--font-family-heading);
 
                 @media (max-width: 768px) {
                     font-size: 16px;
@@ -142,6 +177,27 @@
 
                 &>strong {
                     color: var(--color-neutral-0);
+                }
+            }
+
+            &>.hero__container-texts-button {
+                display: none;
+
+                @media (max-width: 768px) {
+                    display: flex;
+                }
+
+                &>div {
+                    background-color: var(--color-neutral-0);
+                    color: var(--color-primary-700);
+
+                    &>svg {
+                        color: var(--color-primary-700);
+
+                        &>path {
+                            fill: currentColor;
+                        }
+                    }
                 }
             }
         }
@@ -156,7 +212,7 @@
             height: 480px;
 
             @media (max-width: 768px) {
-                height: 420px;
+                height: 360px;
                 width: 80%;
             }
 
@@ -167,11 +223,11 @@
                 transform: translateX(-50%);
                 z-index: 1;
                 object-fit: contain;
-                width: 1000px!important;
+                width: 1000px !important;
                 opacity: 0.2;
 
                 @media (max-width: 768px) {
-                    width: 1800px!important;
+                    width: 1800px !important;
                 }
             }
 

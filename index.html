@@ -90,9 +90,22 @@
                     A <strong>MedicaCerto</strong> está desenvolvendo uma solução que visa ajudar médicos em todo o
                     Brasil a encontrar o que precisam de forma fácil.
                 </p>
+                <button class="hero__container-texts-button">
+                    <div>
+                        <span>Testar agora</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" fill="none">
+                            <path
+                                d="M16.3887 0.703125V12.8906C16.3887 13.0771 16.3146 13.2559 16.1828 13.3878C16.0509 13.5197 15.8721 13.5938 15.6856 13.5938C15.4991 13.5938 15.3203 13.5197 15.1884 13.3878C15.0565 13.2559 14.9825 13.0771 14.9825 12.8906V2.4L1.18246 16.2C1.04917 16.3242 0.872879 16.3918 0.690722 16.3886C0.508564 16.3854 0.334765 16.3116 0.20594 16.1828C0.0771158 16.0539 0.0033235 15.8801 0.000109544 15.698C-0.00310441 15.5158 0.0645108 15.3395 0.188711 15.2062L13.9887 1.40625H3.49809C3.31161 1.40625 3.13276 1.33217 3.0009 1.20031C2.86904 1.06845 2.79496 0.889605 2.79496 0.703125C2.79496 0.516645 2.86904 0.337802 3.0009 0.20594C3.13276 0.0740789 3.31161 0 3.49809 0H15.6856C15.8721 0 16.0509 0.0740789 16.1828 0.20594C16.3146 0.337802 16.3887 0.516645 16.3887 0.703125Z"
+                                fill="#F1F2F4" />
+                        </svg>
+                    </div>
+                </button>
             </div>
             <div class="hero__container-mockup">
-                <img src="./assets/svg-logos/medicacerto-icon-white.svg" alt="Ícone da Medica Certo" class="hero__container-mockup-bg">
+                <img src="./assets/svg-logos/medicacerto-icon-white.svg" alt="Ícone da Medica Certo"
+                    class="hero__container-mockup-bg">
                 <img src="./assets/mockup-hero.png" alt="Mockup da aplicação Medica Certo"
                     class="hero__container-mockup-image">
             </div>
@@ -188,7 +201,14 @@
             </div>
             <div class="process__container-steps">
 
-                <div class="process__container-steps-progress-line"></div> <!-- Linha de progresso entre os passos -->
+                <div class="process__container-steps-track">
+                    <div class="process__container-steps-track-line"></div>
+                    <div class="process__container-steps-track-fill"></div>
+                    <div class="process__container-steps-track-dot" data-step="0"></div>
+                    <div class="process__container-steps-track-dot" data-step="1"></div>
+                    <div class="process__container-steps-track-dot" data-step="2"></div>
+                    <div class="process__container-steps-track-dot" data-step="3"></div>
+                </div>
 
                 <div class="process__container-steps-item">
                     <img src="./assets/mockup-search.png" alt="Mockup da aplicação Medica Certo">
@@ -262,7 +282,10 @@
     </section>
 
     <!-- Scripts -->
-    <script src="./js/main.js" defer></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

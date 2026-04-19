@@ -80,6 +80,11 @@
                 justify-content: space-between;
                 gap: 48px;
                 width: 100%;
+                transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+                &:hover {
+                    transform: translateY(-4px);
+                }
 
                 @media (max-width: 768px) {
                     flex-direction: column;
@@ -90,14 +95,15 @@
                     @media (max-width: 768px) {
                         flex-direction: column-reverse;
                     }
+
                     &>.hero__container-grid-item-mockups {
                         img {
                             scale: 1.4;
-                            transform: translateY(160px)!important;
+                            transform: translateY(160px) !important;
 
                             @media (max-width: 768px) {
                                 scale: 1.2;
-                                transform: translateY(120px)!important;
+                                transform: translateY(120px) !important;
                             }
                         }
                     }
@@ -110,7 +116,7 @@
                     align-items: center;
                     justify-content: center;
                     height: 420px;
-                    overflow: hidden; 
+                    overflow: hidden;
                     gap: 24px;
                     background: linear-gradient(0deg, #9AC1DE, transparent);
                     border-radius: 48px;
@@ -121,7 +127,7 @@
                     }
 
                     &>img {
-                        width:260px;
+                        width: 260px;
                         object-fit: contain;
 
                         @media (max-width: 768px) {
@@ -150,6 +156,7 @@
                         padding: 4px 16px;
                         border-radius: 99px;
                         background-color: #9AC1DE66;
+
                         &>span {
                             font-size: 14px;
                             line-height: 1;
@@ -178,6 +185,7 @@
                         @media (max-width: 768px) {
                             font-size: 32px;
                         }
+
                         &>strong {}
                     }
 

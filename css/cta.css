@@ -10,13 +10,44 @@
     }
 
     &>.cta__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 24px;
+        width: 100%;
 
         &>h1 {
+            max-width: 800px;
+            text-align: center;
+            font-size: 48px;
+            line-height: 100%;
+            letter-spacing: -0.04em;
+            color: var(--color-neutral-900);
+            font-weight: 500;
+            font-family: var(--font-family-primary);
+
+            @media (max-width: 768px) {
+                font-size: 36px;
+            }
 
             &>strong {}
         }
 
-        &>p {}
+        &>p {
+            max-width: 600px;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            color: var(--color-neutral-600);
+            font-weight: 300;
+            font-family: var(--font-family-primary);
+
+            @media (max-width: 768px) {
+                font-size: 16px;
+            }
+        }
 
         &>button {
 
