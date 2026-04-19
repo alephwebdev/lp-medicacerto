@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Medica Certo — Dashboard</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/tokens.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+</head>
+
+<body>
+
+    <div class="dash">
+
+        <!-- Header -->
+        <header class="dash__header">
+            <div class="dash__header-left">
+                <img src="./assets/png-logos/medicacerto-logo-green.png" alt="Logo Medica Certo"
+                    class="dash__header-logo">
+                <div class="dash__header-divider"></div>
+                <span class="dash__header-label">Dashboard</span>
+            </div>
+            <div class="dash__header-right">
+                <div class="dash__header-status" id="status-indicator">
+                    <span class="dash__header-status-dot"></span>
+                    <span>Carregando…</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- KPI Cards -->
+        <section class="dash__kpis">
+            <div class="dash__kpi">
+                <span class="dash__kpi-label">Total de respostas</span>
+                <span class="dash__kpi-value" id="kpi-total">—</span>
+            </div>
+            <div class="dash__kpi">
+                <span class="dash__kpi-label">Respostas hoje</span>
+                <span class="dash__kpi-value" id="kpi-today">—</span>
+            </div>
+            <div class="dash__kpi">
+                <span class="dash__kpi-label">Sentem necessidade</span>
+                <span class="dash__kpi-value" id="kpi-need">—</span>
+            </div>
+            <div class="dash__kpi">
+                <span class="dash__kpi-label">Última resposta</span>
+                <span class="dash__kpi-value dash__kpi-value--small" id="kpi-last">—</span>
+            </div>
+        </section>
+
+        <!-- Charts Grid -->
+        <section class="dash__charts">
+
+            <!-- Q1: Laudos por mês -->
+            <div class="dash__card">
+                <div class="dash__card-header">
+                    <h2>Laudos (LME) por mês</h2>
+                    <span class="dash__card-tag">Q1</span>
+                </div>
+                <div class="dash__card-chart">
+                    <canvas id="chart-q1"></canvas>
+                </div>
+            </div>
+
+            <!-- Q2: Protocolos CONITEC -->
+            <div class="dash__card">
+                <div class="dash__card-header">
+                    <h2>Acesso aos protocolos CONITEC</h2>
+                    <span class="dash__card-tag">Q2</span>
+                </div>
+                <div class="dash__card-chart">
+                    <canvas id="chart-q2"></canvas>
+                </div>
+            </div>
+
+            <!-- Q3: Falta de ferramentas -->
+            <div class="dash__card">
+                <div class="dash__card-header">
+                    <h2>Sente falta de ferramenta para PCDTs?</h2>
+                    <span class="dash__card-tag">Q3</span>
+                </div>
+                <div class="dash__card-chart">
+                    <canvas id="chart-q3"></canvas>
+                </div>
+            </div>
+
+            <!-- Q4: Importância (scale) -->
+            <div class="dash__card">
+                <div class="dash__card-header">
+                    <h2>Importância da ferramenta digital</h2>
+                    <span class="dash__card-tag">Q4 · Escala 0-5</span>
+                </div>
+                <div class="dash__card-chart">
+                    <canvas id="chart-q4"></canvas>
+                </div>
+            </div>
+
+        </section>
+
+
+
+        <!-- Recent submissions table -->
+        <section class="dash__table-section">
+            <div class="dash__card dash__card--wide">
+                <div class="dash__card-header">
+                    <h2>Últimas respostas</h2>
+                    <span class="dash__card-tag" id="table-count">0 registros</span>
+                </div>
+                <div class="dash__table-wrapper">
+                    <table class="dash__table">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>E-mail</th>
+                                <th>Q1</th>
+                                <th>Q2</th>
+                                <th>Q3</th>
+                                <th>Q4</th>
+                                <th>Data</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            <tr>
+                                <td colspan="7" class="dash__table-empty">Carregando dados…</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+    <script src="./js/dashboard.js"></script>
+</body>
+
+</html>

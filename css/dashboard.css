@@ -1,0 +1,312 @@
+/* ============================================
+   MEDICA CERTO — Dashboard Styles
+   ============================================ */
+
+body {
+    background-color: var(--color-neutral-50);
+}
+
+.dash {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding: 32px 40px 64px;
+
+    @media (max-width: 768px) {
+        padding: 20px 16px 48px;
+        gap: 16px;
+    }
+}
+
+/* ── Header ── */
+
+.dash__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--color-neutral-200);
+
+    @media (max-width: 768px) {
+        padding-bottom: 16px;
+    }
+}
+
+.dash__header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.dash__header-logo {
+    height: 26px;
+    object-fit: contain;
+
+    @media (max-width: 768px) {
+        height: 22px;
+    }
+}
+
+.dash__header-divider {
+    width: 1px;
+    height: 20px;
+    background-color: var(--color-neutral-300);
+}
+
+.dash__header-label {
+    font-family: var(--font-family-primary);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--color-neutral-600);
+}
+
+.dash__header-right {
+    display: flex;
+    align-items: center;
+}
+
+.dash__header-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-family-primary);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-neutral-500);
+
+    &.is-live {
+        color: var(--color-success);
+    }
+
+    &.is-error {
+        color: var(--color-error);
+    }
+}
+
+.dash__header-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-neutral-400);
+    transition: background-color 0.3s ease;
+
+    .is-live & {
+        background-color: var(--color-success);
+        box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.15);
+    }
+
+    .is-error & {
+        background-color: var(--color-error);
+    }
+}
+
+/* ── KPI Cards ── */
+
+.dash__kpis {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+
+    @media (max-width: 960px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.dash__kpi {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 24px;
+    background-color: var(--color-neutral-0);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 16px;
+    transition: box-shadow 0.3s ease, transform 0.25s ease;
+
+    &:hover {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        transform: translateY(-1px);
+    }
+
+    @media (max-width: 768px) {
+        padding: 20px;
+    }
+}
+
+.dash__kpi-label {
+    font-family: var(--font-family-primary);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--color-neutral-500);
+}
+
+.dash__kpi-value {
+    font-family: var(--font-family-heading);
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    color: var(--color-primary-800);
+    line-height: 1;
+
+    @media (max-width: 768px) {
+        font-size: 28px;
+    }
+}
+
+.dash__kpi-value--small {
+    font-size: 16px;
+    font-family: var(--font-family-primary);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: var(--color-neutral-700);
+    line-height: 1.3;
+
+    @media (max-width: 768px) {
+        font-size: 14px;
+    }
+}
+
+/* ── Chart Cards ── */
+
+.dash__charts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.dash__timeline {
+    display: flex;
+}
+
+.dash__table-section {
+    display: flex;
+}
+
+.dash__card {
+    background-color: var(--color-neutral-0);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @media (max-width: 768px) {
+        padding: 20px 16px;
+        gap: 16px;
+    }
+}
+
+.dash__card--wide {
+    width: 100%;
+}
+
+.dash__card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    &>h2 {
+        font-family: var(--font-family-primary);
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        color: var(--color-neutral-800);
+    }
+}
+
+.dash__card-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: 99px;
+    background-color: rgba(0, 116, 129, 0.08);
+    font-family: var(--font-family-primary);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--color-primary-500);
+    white-space: nowrap;
+}
+
+.dash__card-chart {
+    position: relative;
+    height: 260px;
+
+    @media (max-width: 768px) {
+        height: 220px;
+    }
+}
+
+.dash__card-chart--timeline {
+    height: 220px;
+
+    @media (max-width: 768px) {
+        height: 180px;
+    }
+}
+
+/* ── Table ── */
+
+.dash__table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.dash__table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-family-primary);
+    font-size: 14px;
+
+    & th {
+        text-align: left;
+        padding: 10px 14px;
+        font-weight: 600;
+        font-size: 12px;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: var(--color-neutral-500);
+        background-color: var(--color-neutral-50);
+        border-bottom: 1px solid var(--color-neutral-200);
+        white-space: nowrap;
+    }
+
+    & td {
+        padding: 12px 14px;
+        color: var(--color-neutral-700);
+        border-bottom: 1px solid var(--color-neutral-100);
+        white-space: nowrap;
+        max-width: 200px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    & tbody tr {
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            background-color: var(--color-neutral-50);
+        }
+    }
+}
+
+.dash__table-empty {
+    text-align: center;
+    padding: 32px 14px !important;
+    color: var(--color-neutral-400);
+    font-style: italic;
+}

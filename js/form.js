@@ -272,8 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ── Prototype button ── */
     if (prototypeBtn) {
         prototypeBtn.addEventListener('click', () => {
-            // TODO: redirect to prototype page
-            // window.location.href = './prototype.html';
+            window.location.href = './prototype.html';
         });
     }
 

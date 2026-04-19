@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>Medica Certo — Protótipo</title>
+    <meta name="description" content="Busque medicamentos por Diretriz ou CID-10 com a Medica Certo.">
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon.png">
+
+    <!-- Preconnect fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/tokens.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/prototype.css">
+</head>
+
+<body>
+
+    <div class="proto">
+
+        <!-- Header -->
+        <header class="proto__header">
+            <a href="./form.html" class="proto__header-back">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m15 18-6-6 6-6" />
+                </svg>
+                <span>Voltar</span>
+            </a>
+            <div class="proto__header-center">
+                <img src="./assets/png-logos/medicacerto-logo-green.png" alt="Logo Medica Certo"
+                    class="proto__header-logo">
+                <span class="proto__header-badge">Protótipo</span>
+            </div>
+            <div class="proto__header-spacer"></div>
+        </header>
+
+        <!-- Hero / Search -->
+        <section class="proto__hero">
+            <div class="proto__hero-content">
+                <h1>Busque por <strong>diretriz</strong> ou <strong>CID-10</strong></h1>
+                <p>Digite o nome da diretriz, código ou descrição do CID-10 para encontrar os medicamentos.</p>
+            </div>
+
+            <div class="proto__search">
+                <div class="proto__search-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="m21 21-4.3-4.3" />
+                    </svg>
+                </div>
+                <input type="text" id="proto-search" class="proto__search-input"
+                    placeholder="Ex: Artrite Reumatoide, M05.3, Asma..." autocomplete="off" spellcheck="false">
+                <button type="button" id="proto-clear" class="proto__search-clear" aria-label="Limpar busca" hidden>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 6 6 18" />
+                        <path d="m6 6 12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="proto__stats" id="proto-stats"></div>
+        </section>
+
+        <!-- Results -->
+        <main class="proto__results" id="proto-results">
+            <!-- Empty state -->
+            <div class="proto__empty" id="proto-empty">
+                <div class="proto__empty-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m21 21-4.3-4.3" />
+                        <circle cx="11" cy="11" r="8" />
+                    </svg>
+                </div>
+                <p>Comece digitando para ver os resultados</p>
+            </div>
+
+            <!-- No results -->
+            <div class="proto__no-results" id="proto-no-results" hidden>
+                <div class="proto__no-results-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="m15 9-6 6" />
+                        <path d="m9 9 6 6" />
+                    </svg>
+                </div>
+                <p>Nenhum resultado encontrado</p>
+            </div>
+
+            <!-- Cards container -->
+            <div class="proto__cards" id="proto-cards"></div>
+        </main>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="./js/prototype.js"></script>
+</body>
+
+</html>

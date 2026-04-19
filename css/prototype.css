@@ -1,0 +1,434 @@
+/* ============================================
+   MEDICA CERTO — Prototype Search Page
+   ============================================ */
+
+/* ── Layout ── */
+
+.proto {
+    min-height: 100vh;
+    background-color: var(--color-bg-subtle);
+    font-family: var(--font-family-primary);
+    color: var(--color-text);
+}
+
+/* ── Header ── */
+
+.proto__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 960px;
+    margin-inline: auto;
+    padding: 20px 1.5rem;
+}
+
+.proto__header-back {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color 0.25s ease;
+
+    &:hover {
+        color: var(--color-text);
+    }
+}
+
+.proto__header-center {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.proto__header-logo {
+    height: 28px;
+    width: auto;
+}
+
+.proto__header-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    background-color: var(--color-primary-50);
+    color: var(--color-primary-500);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border-radius: 9999px;
+    border: 1px solid var(--color-primary-100);
+}
+
+.proto__header-spacer {
+    width: 68px;
+}
+
+/* ── Hero / Search ── */
+
+.proto__hero {
+    max-width: 960px;
+    margin-inline: auto;
+    padding: 40px 1.5rem 0;
+    text-align: center;
+}
+
+.proto__hero-content {
+    margin-bottom: 32px;
+
+    & h1 {
+        font-family: var(--font-family-heading);
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: -0.04em;
+        color: var(--color-primary-800);
+        line-height: 1.2;
+        margin-bottom: 8px;
+    }
+
+    & p {
+        font-size: 15px;
+        color: var(--color-text-secondary);
+        max-width: 520px;
+        margin-inline: auto;
+        line-height: 1.5;
+    }
+}
+
+/* ── Search bar ── */
+
+.proto__search {
+    position: relative;
+    max-width: 640px;
+    margin-inline: auto;
+}
+
+.proto__search-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-neutral-400);
+    pointer-events: none;
+    display: flex;
+}
+
+.proto__search-input {
+    width: 100%;
+    height: 56px;
+    padding: 0 52px 0 52px;
+    border: 2px solid var(--color-border-subtle);
+    border-radius: 16px;
+    background-color: var(--color-neutral-0);
+    font-family: var(--font-family-primary);
+    font-size: 16px;
+    color: var(--color-text);
+    outline: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+
+    &::placeholder {
+        color: var(--color-neutral-400);
+    }
+
+    &:focus {
+        border-color: var(--color-primary-300);
+        box-shadow: 0 0 0 4px rgba(0, 116, 129, 0.08);
+    }
+}
+
+.proto__search-clear {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%) scale(1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: var(--color-neutral-100);
+    border-radius: 50%;
+    color: var(--color-neutral-500);
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+        background-color: var(--color-neutral-200);
+        color: var(--color-neutral-700);
+        transform: translateY(-50%) scale(1);
+    }
+}
+
+/* ── Stats ── */
+
+.proto__stats {
+    max-width: 640px;
+    margin: 12px auto 0;
+    text-align: left;
+    font-size: 13px;
+    color: var(--color-text-muted);
+    min-height: 20px;
+}
+
+/* ── Results ── */
+
+.proto__results {
+    max-width: 960px;
+    margin-inline: auto;
+    padding: 24px 1.5rem 80px;
+}
+
+/* ── Empty / No results ── */
+
+.proto__empty,
+.proto__no-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    text-align: center;
+
+    & p {
+        font-size: 15px;
+        color: var(--color-text-muted);
+        margin-top: 16px;
+    }
+}
+
+.proto__empty-icon,
+.proto__no-results-icon {
+    color: var(--color-neutral-300);
+}
+
+/* ── Cards ── */
+
+.proto__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.proto__card {
+    background-color: var(--color-neutral-0);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 16px;
+    padding: 28px;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+
+    &:hover {
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+        border-color: var(--color-border);
+    }
+}
+
+.proto__card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.proto__card-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background-color: var(--color-primary-50);
+    border-radius: 12px;
+    color: var(--color-primary-500);
+}
+
+.proto__card-title {
+    flex: 1;
+
+    & h2 {
+        font-family: var(--font-family-heading);
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--color-primary-800);
+        letter-spacing: -0.02em;
+        line-height: 1.3;
+    }
+
+    & span {
+        display: inline-block;
+        margin-top: 4px;
+        font-size: 13px;
+        color: var(--color-text-muted);
+        line-height: 1.4;
+    }
+}
+
+/* ── CIDs section ── */
+
+.proto__card-cids {
+    margin-bottom: 20px;
+
+    & h3 {
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--color-text-muted);
+        margin-bottom: 10px;
+    }
+}
+
+.proto__card-cid-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.proto__card-cid {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    background-color: var(--color-neutral-50);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.3;
+
+    & code {
+        font-weight: 600;
+        color: var(--color-primary-600);
+        font-family: var(--font-family-primary);
+        font-size: 12px;
+    }
+
+    & span {
+        color: var(--color-text-secondary);
+    }
+}
+
+.proto__card-cid.is-match {
+    background-color: var(--color-primary-50);
+    border-color: var(--color-primary-200);
+
+    & code {
+        color: var(--color-primary-700);
+    }
+}
+
+/* ── Medicamentos section ── */
+
+.proto__card-meds {
+
+    & h3 {
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--color-text-muted);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        & svg {
+            color: var(--color-success);
+        }
+    }
+}
+
+.proto__card-med-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.proto__card-med {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    background-color: var(--color-primary-50);
+    border: 1px solid var(--color-primary-100);
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-primary-800);
+    line-height: 1.3;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 768px) {
+    .proto__header {
+        padding: 16px 1rem;
+    }
+
+    .proto__header-spacer {
+        display: none;
+    }
+
+    .proto__hero {
+        padding: 24px 1rem 0;
+    }
+
+    .proto__hero-content {
+        margin-bottom: 24px;
+
+        & h1 {
+            font-size: 1.5rem;
+        }
+
+        & p {
+            font-size: 14px;
+        }
+    }
+
+    .proto__search-input {
+        height: 50px;
+        font-size: 15px;
+        border-radius: 14px;
+    }
+
+    .proto__results {
+        padding: 16px 1rem 60px;
+    }
+
+    .proto__card {
+        padding: 20px;
+        border-radius: 14px;
+    }
+
+    .proto__card-header {
+        gap: 10px;
+    }
+
+    .proto__card-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+    }
+
+    .proto__card-title h2 {
+        font-size: 1rem;
+    }
+
+    .proto__card-cid-list {
+        gap: 4px;
+    }
+
+    .proto__card-cid {
+        padding: 4px 8px;
+        font-size: 12px;
+
+        & code {
+            font-size: 11px;
+        }
+    }
+
+    .proto__card-med {
+        padding: 6px 10px;
+        font-size: 13px;
+        border-radius: 8px;
+    }
+}

@@ -7,6 +7,8 @@
 
     @media (max-width: 768px) {
         padding: 24px;
+        margin-top: 72px;
+        border: 1px solid red;
     }
 
     &>.process__container {
@@ -154,6 +156,10 @@
                     &>img {
                         grid-column: 1;
                         justify-self: end;
+
+                        @media (max-width: 768px) {
+                            justify-self: start;
+                        }
                     }
 
                     &>.process__container-steps-item-texts {
@@ -167,9 +173,17 @@
                         grid-column: 1;
                         align-items: flex-end;
 
+                        @media (max-width: 768px) {
+                            align-items: flex-start;
+                        }
+
                         &>h1,
                         &>p {
                             text-align: right;
+
+                            @media (max-width: 768px) {
+                                text-align: left;
+                            }
                         }
                     }
 
