@@ -191,6 +191,10 @@
     padding: 60px 20px;
     text-align: center;
 
+    &[hidden] {
+        display: none;
+    }
+
     & p {
         font-size: 15px;
         color: var(--color-text-muted);

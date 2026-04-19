@@ -4,6 +4,25 @@
 
 /* ── Utilities ── */
 
+/* ── Splash Screen ── */
+
+.splash {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary-700);
+}
+
+.splash__icon {
+    width: 120px;
+    height: auto;
+}
+
+/* ── Container ── */
+
 .container {
     width: 100%;
     max-width: 1200px;
@@ -43,7 +62,7 @@ p strong {
 button {
     display: flex;
     align-items: center;
-    gap: -2px;
+    gap: 0;
     cursor: pointer;
     transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.3s ease;
 
@@ -53,6 +72,10 @@ button {
 
     &:active {
         transform: scale(0.97);
+    }
+
+    &:hover>div:last-child>svg {
+        transform: translate(2px, -2px);
     }
 
     &>div:first-child {
@@ -74,7 +97,7 @@ button {
         @media (max-width: 768px) {
             height: 42px;
             padding: 0 18px;
-            font-size: 14px;
+            font-size: 16px;
         }
     }
 
@@ -103,26 +126,23 @@ button {
                 height: 14px;
             }
         }
-
-        &:hover>div:last-child>svg {
-            transform: translate(2px, -2px);
-        }
     }
+}
 
-    /* ── Sections ── */
+/* ── Sections ── */
+
+.section {
+    padding-block: 5rem;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 768px) {
+    .container {
+        padding-inline: 1rem;
+    }
 
     .section {
-        padding-block: 5rem;
+        padding-block: 3rem;
     }
-
-    /* ── Responsive ── */
-
-    @media (max-width: 768px) {
-        .container {
-            padding-inline: 1rem;
-        }
-
-        .section {
-            padding-block: 3rem;
-        }
-    }
+}
