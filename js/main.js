@@ -30,6 +30,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    /* ── "Testar agora" buttons → form page ── */
+    document.querySelectorAll('button').forEach((btn) => {
+        const span = btn.querySelector('span');
+        if (span && span.textContent.trim() === 'Testar agora') {
+            btn.addEventListener('click', () => {
+                window.location.href = './form.html';
+            });
+        }
+    });
+
     /* ══════════════════════════════════════════
        ENTRANCE ANIMATIONS
        ══════════════════════════════════════════ */

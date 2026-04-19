@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>Medica Certo — Teste agora</title>
+    <meta name="description" content="Preencha o formulário e teste o protótipo da Medica Certo.">
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon.png">
+
+    <!-- Preconnect fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/tokens.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/form.css">
+</head>
+
+<body>
+
+    <div class="form-page">
+
+        <!-- Header -->
+        <header class="form-page__header">
+            <a href="./index.html" class="form-page__header-back">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m15 18-6-6 6-6" />
+                </svg>
+                <span>Voltar</span>
+            </a>
+            <img src="./assets/png-logos/medicacerto-logo-green.png" alt="Logo Medica Certo"
+                class="form-page__header-logo">
+        </header>
+
+        <!-- Progress Timeline -->
+        <div class="form-page__progress">
+            <div class="form-page__progress-step is-active" data-step="0">
+                <div class="form-page__progress-step-dot">
+                    <span>1</span>
+                </div>
+                <p>Seus dados</p>
+            </div>
+            <div class="form-page__progress-line">
+                <div class="form-page__progress-line-fill"></div>
+            </div>
+            <div class="form-page__progress-step" data-step="1">
+                <div class="form-page__progress-step-dot">
+                    <span>2</span>
+                </div>
+                <p>Pesquisa rápida</p>
+            </div>
+            <div class="form-page__progress-line">
+                <div class="form-page__progress-line-fill"></div>
+            </div>
+            <div class="form-page__progress-step" data-step="2">
+                <div class="form-page__progress-step-dot">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                </div>
+                <p>Recompensa</p>
+            </div>
+        </div>
+
+        <!-- Form Container -->
+        <main class="form-page__content">
+
+            <!-- Step 1: Seus dados -->
+            <section class="form-page__step is-active" data-step="0">
+                <div class="form-page__step-header">
+                    <div class="form-page__step-badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                        <span>Menos de 30 segundos</span>
+                    </div>
+                    <h1>Primeiro, quem é <strong>você</strong>?</h1>
+                    <p>Só precisamos do básico para personalizar sua experiência</p>
+                </div>
+                <div class="form-page__step-fields">
+                    <div class="form-page__field">
+                        <label for="field-name">Seu nome</label>
+                        <input type="text" id="field-name" name="name" placeholder="Ex: Dr. João Silva"
+                            autocomplete="name" required>
+                    </div>
+                    <div class="form-page__field">
+                        <label for="field-email">Seu melhor e-mail</label>
+                        <input type="email" id="field-email" name="email" placeholder="Ex: joao@clinica.com.br"
+                            autocomplete="email" required>
+                    </div>
+                </div>
+                <div class="form-page__step-actions">
+                    <button type="button" class="form-page__btn-next" data-next="1">
+                        <div><span>Continuar</span></div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" fill="none">
+                                <path
+                                    d="M16.3887 0.703125V12.8906C16.3887 13.0771 16.3146 13.2559 16.1828 13.3878C16.0509 13.5197 15.8721 13.5938 15.6856 13.5938C15.4991 13.5938 15.3203 13.5197 15.1884 13.3878C15.0565 13.2559 14.9825 13.0771 14.9825 12.8906V2.4L1.18246 16.2C1.04917 16.3242 0.872879 16.3918 0.690722 16.3886C0.508564 16.3854 0.334765 16.3116 0.20594 16.1828C0.0771158 16.0539 0.0033235 15.8801 0.000109544 15.698C-0.00310441 15.5158 0.0645108 15.3395 0.188711 15.2062L13.9887 1.40625H3.49809C3.31161 1.40625 3.13276 1.33217 3.0009 1.20031C2.86904 1.06845 2.79496 0.889605 2.79496 0.703125C2.79496 0.516645 2.86904 0.337802 3.0009 0.20594C3.13276 0.0740789 3.31161 0 3.49809 0H15.6856C15.8721 0 16.0509 0.0740789 16.1828 0.20594C16.3146 0.337802 16.3887 0.516645 16.3887 0.703125Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Step 2: Pesquisa rápida -->
+            <section class="form-page__step" data-step="1">
+                <div class="form-page__step-header">
+                    <div class="form-page__step-badge">
+                        <span>4 perguntas rápidas</span>
+                    </div>
+                    <h1>Conta pra gente sobre sua <strong>rotina</strong></h1>
+                    <p>Só marcar as opções — leva menos de 20 segundos</p>
+                </div>
+                <div class="form-page__step-fields">
+
+                    <!-- Q1 -->
+                    <div class="form-page__question" data-question="0">
+                        <h2>Quantos laudos (LME) você preenche por mês?</h2>
+                        <div class="form-page__options">
+                            <label class="form-page__option">
+                                <input type="radio" name="q1" value="Nenhum" required>
+                                <span>Nenhum</span>
+                            </label>
+                            <label class="form-page__option">
+                                <input type="radio" name="q1" value="Até 5">
+                                <span>Até 5</span>
+                            </label>
+                            <label class="form-page__option">
+                                <input type="radio" name="q1" value="De 6 a 15">
+                                <span>De 6 a 15</span>
+                            </label>
+                            <label class="form-page__option">
+                                <input type="radio" name="q1" value="Mais de 15">
+                                <span>Mais de 15</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Q2 -->
+                    <div class="form-page__question" data-question="1">
+                        <h2>Os protocolos da CONITEC são fáceis de acessar?</h2>
+                        <div class="form-page__options">
+                            <label class="form-page__option">
+                                <input type="radio" name="q2" value="Sim, totalmente" required>
+                                <span>Sim, totalmente</span>
+                            </label>
+                            <label class="form-page__option">
+                                <input type="radio" name="q2" value="Sim, mas com dificuldades">
+                                <span>Sim, mas com dificuldades</span>
+                            </label>
+                            <label class="form-page__option">
+                                <input type="radio" name="q2" value="Não, difícil acesso">
+                                <span>Não, difícil acesso</span>
+                            </label>
+                            <label class="form-page__option">
+                                <input type="radio" name="q2" value="Não, difícil acesso e compreensão">
+                                <span>Não, difícil acesso e compreensão</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Q3 -->
+                    <div class="form-page__question" data-question="2">
+                        <h2>Sente falta de uma ferramenta para acessar os PCDTs?</h2>
+                        <div class="form-page__options">
+                            <label class="form-page__option">
+                                <input type="radio" name="q3" value="Sim, com frequência" required>
+                                <span>Sim, com frequência</span>
+                            </label>
+                            <label class="form-page__option">
+                                <input type="radio" name="q3" value="Às vezes">
+                                <span>Às vezes</span>
+                            </label>
+                            <label class="form-page__option">
+                                <input type="radio" name="q3" value="Não sinto falta">
+                                <span>Não sinto falta</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Q4: Scale -->
+                    <div class="form-page__question" data-question="3">
+                        <h2>Importância de uma ferramenta digital para reduzir erros de prescrição?</h2>
+                        <p class="form-page__question-hint">0 = Nenhuma · 5 = Máxima</p>
+                        <div class="form-page__scale">
+                            <label class="form-page__scale-item">
+                                <input type="radio" name="q4" value="0" required>
+                                <span>0</span>
+                            </label>
+                            <label class="form-page__scale-item">
+                                <input type="radio" name="q4" value="1">
+                                <span>1</span>
+                            </label>
+                            <label class="form-page__scale-item">
+                                <input type="radio" name="q4" value="2">
+                                <span>2</span>
+                            </label>
+                            <label class="form-page__scale-item">
+                                <input type="radio" name="q4" value="3">
+                                <span>3</span>
+                            </label>
+                            <label class="form-page__scale-item">
+                                <input type="radio" name="q4" value="4">
+                                <span>4</span>
+                            </label>
+                            <label class="form-page__scale-item">
+                                <input type="radio" name="q4" value="5">
+                                <span>5</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-page__step-actions">
+                    <button type="button" class="form-page__btn-back" data-back="0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m15 18-6-6 6-6" />
+                        </svg>
+                        <span>Voltar</span>
+                    </button>
+                    <button type="button" class="form-page__btn-next" data-next="2">
+                        <div><span>Finalizar</span></div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" fill="none">
+                                <path
+                                    d="M16.3887 0.703125V12.8906C16.3887 13.0771 16.3146 13.2559 16.1828 13.3878C16.0509 13.5197 15.8721 13.5938 15.6856 13.5938C15.4991 13.5938 15.3203 13.5197 15.1884 13.3878C15.0565 13.2559 14.9825 13.0771 14.9825 12.8906V2.4L1.18246 16.2C1.04917 16.3242 0.872879 16.3918 0.690722 16.3886C0.508564 16.3854 0.334765 16.3116 0.20594 16.1828C0.0771158 16.0539 0.0033235 15.8801 0.000109544 15.698C-0.00310441 15.5158 0.0645108 15.3395 0.188711 15.2062L13.9887 1.40625H3.49809C3.31161 1.40625 3.13276 1.33217 3.0009 1.20031C2.86904 1.06845 2.79496 0.889605 2.79496 0.703125C2.79496 0.516645 2.86904 0.337802 3.0009 0.20594C3.13276 0.0740789 3.31161 0 3.49809 0H15.6856C15.8721 0 16.0509 0.0740789 16.1828 0.20594C16.3146 0.337802 16.3887 0.516645 16.3887 0.703125Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Step 3: Recompensa (auto-submitted) -->
+            <section class="form-page__step" data-step="2">
+
+                <!-- Confetti overlay -->
+                <div class="form-page__confetti" aria-hidden="true"></div>
+
+                <div class="form-page__celebration">
+                    <!-- Animated check circle -->
+                    <div class="form-page__celebration-check">
+                        <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle class="form-page__celebration-check-circle" cx="26" cy="26" r="24"
+                                stroke="currentColor" stroke-width="3" fill="none" />
+                            <path class="form-page__celebration-check-path" d="M14 27l7 7 16-16" stroke="currentColor"
+                                stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                        </svg>
+                    </div>
+                    <h1>Obrigado, <strong>suas respostas foram enviadas</strong>!</h1>
+                    <p>Sua contribuição nos ajuda a construir a ferramenta certa para médicos como você</p>
+                </div>
+
+                <div class="form-page__reward">
+                    <div class="form-page__reward-card">
+                        <div class="form-page__reward-card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" />
+                                <path d="M9 18h6" />
+                                <path d="M10 22h4" />
+                            </svg>
+                        </div>
+                        <h2>Agora é sua vez de testar</h2>
+                        <p>Como agradecimento, acesse uma versão prévia da plataforma</p>
+                        <button type="button" class="form-page__btn-prototype">
+                            <div><span>Testar protótipo</span></div>
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" fill="none">
+                                    <path
+                                        d="M16.3887 0.703125V12.8906C16.3887 13.0771 16.3146 13.2559 16.1828 13.3878C16.0509 13.5197 15.8721 13.5938 15.6856 13.5938C15.4991 13.5938 15.3203 13.5197 15.1884 13.3878C15.0565 13.2559 14.9825 13.0771 14.9825 12.8906V2.4L1.18246 16.2C1.04917 16.3242 0.872879 16.3918 0.690722 16.3886C0.508564 16.3854 0.334765 16.3116 0.20594 16.1828C0.0771158 16.0539 0.0033235 15.8801 0.000109544 15.698C-0.00310441 15.5158 0.0645108 15.3395 0.188711 15.2062L13.9887 1.40625H3.49809C3.31161 1.40625 3.13276 1.33217 3.0009 1.20031C2.86904 1.06845 2.79496 0.889605 2.79496 0.703125C2.79496 0.516645 2.86904 0.337802 3.0009 0.20594C3.13276 0.0740789 3.31161 0 3.49809 0H15.6856C15.8721 0 16.0509 0.0740789 16.1828 0.20594C16.3146 0.337802 16.3887 0.516645 16.3887 0.703125Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="./js/form.js"></script>
+</body>
+
+</html>
