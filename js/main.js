@@ -124,26 +124,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        /* ── Process section ── */
-        revealOnScroll('.process__container > .process__container-texts', {
-            y: 40, opacity: 0, duration: 0.8, ease: 'power3.out'
-        });
-
-        document.querySelectorAll('.process__container-steps-item').forEach((item, i) => {
-            const isOdd = i % 2 === 0;
-            gsap.from(item, {
-                x: isOdd ? -40 : 40,
-                opacity: 0,
-                duration: 0.8,
-                ease: 'power3.out',
-                scrollTrigger: {
-                    trigger: item,
-                    start: 'top 85%',
-                    once: true,
-                }
-            });
-        });
-
         /* ── CTA section ── */
         gsap.from('.cta__container', {
             y: 40,
@@ -157,89 +137,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
-    /* ══════════════════════════════════════════
-       PROCESS PROGRESS LINE
-       ══════════════════════════════════════════ */
-
-    const stepsContainer = document.querySelector('.process__container-steps');
-    const trackLine = document.querySelector('.process__container-steps-track-line');
-    const trackFill = document.querySelector('.process__container-steps-track-fill');
-    const dots = document.querySelectorAll('.process__container-steps-track-dot');
-    const items = document.querySelectorAll('.process__container-steps-item');
-
-    if (!stepsContainer || !trackFill || !trackLine || dots.length < 4 || !items.length) return;
-
-    /* ── Position dots ── */
-    function positionDots() {
-        const containerRect = stepsContainer.getBoundingClientRect();
-        const containerTop = containerRect.top + window.scrollY;
-        const containerHeight = containerRect.height;
-
-        items.forEach((item, i) => {
-            if (!dots[i]) return;
-            const badge = item.querySelector('.process__container-steps-item-texts-badge');
-            const target = badge || item;
-            const targetRect = target.getBoundingClientRect();
-            const targetTop = targetRect.top + window.scrollY;
-            const targetCenter = targetTop + targetRect.height / 2;
-            const pct = ((targetCenter - containerTop) / containerHeight) * 100;
-            dots[i].style.top = pct + '%';
-        });
-
-        dots[3].style.top = '100%';
-
-        const firstDotPct = parseFloat(dots[0].style.top);
-
-        trackLine.style.top = firstDotPct + '%';
-        trackLine.style.height = (100 - firstDotPct) + '%';
-        trackFill.style.top = firstDotPct + '%';
-    }
-
-    positionDots();
-    window.addEventListener('resize', positionDots);
-
-    /* ── Scroll-driven fill + dot activation ── */
-    const ctaSection = document.querySelector('#cta');
-
-    ScrollTrigger.create({
-        trigger: stepsContainer,
-        start: 'top 30%',
-        endTrigger: ctaSection || stepsContainer,
-        end: ctaSection ? 'top 80%' : 'bottom top',
-        scrub: true,
-        onUpdate: (self) => {
-            const progress = self.progress;
-            const firstPct = parseFloat(dots[0].style.top);
-            const lineSpan = 100 - firstPct;
-
-            const fillHeight = progress * lineSpan;
-            trackFill.style.height = fillHeight + '%';
-
-            dots.forEach((dot, i) => {
-                const dotPct = parseFloat(dot.style.top);
-                const dotProgress = (dotPct - firstPct) / lineSpan;
-                const reached = progress >= dotProgress - 0.01;
-
-                let isCurrent = false;
-                if (reached) {
-                    const nextDot = dots[i + 1];
-                    if (nextDot) {
-                        const nextPct = parseFloat(nextDot.style.top);
-                        const nextProgress = (nextPct - firstPct) / lineSpan;
-                        isCurrent = progress < nextProgress - 0.01;
-                    } else {
-                        isCurrent = true;
-                    }
-                }
-
-                dot.classList.toggle('is-active', reached && isCurrent);
-                dot.classList.toggle('is-passed', reached && !isCurrent);
-
-                if (!reached) {
-                    dot.classList.remove('is-passed', 'is-active');
-                }
-            });
-        }
-    });
 });
