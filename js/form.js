@@ -731,7 +731,6 @@ if (firstStep) {
     );
 }
 
-/* ── Question answered feedback ── */
 document.querySelectorAll('.form-page__option input[type="radio"]').forEach((radio) => {
     radio.addEventListener('change', () => {
         // Bounce option
@@ -759,7 +758,6 @@ document.querySelectorAll('.form-page__scale-item input[type="radio"]').forEach(
     });
 });
 
-/* ── Keyboard: Enter to advance ── */
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' && currentStep === 0) {
         const activeEl = document.activeElement;
