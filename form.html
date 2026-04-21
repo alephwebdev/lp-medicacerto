@@ -108,7 +108,7 @@
                             </svg>
                             <span>Menos de 30 segundos</span>
                         </div>
-                        <h1>Primeiro, <strong>precisamos</strong> de algumas informações</h1>
+                        <h1>Apoie o projeto e concorra ao <strong>livro mais cobiçado</strong> da medicina</h1>
                     </div>
                     <div class="form-page__step-fields">
                         <div class="form-page__field">
@@ -123,6 +123,17 @@
                             <span class="form-page__field-error" id="email-error" hidden></span>
                         </div>
                     </div>
+                    <!-- Prize Teaser -->
+                    <div class="form-page__prize-teaser">
+                        <img src="./assets/livro-sorteio.jpg" alt="Semiologia Médica — Porto &amp; Porto"
+                            class="form-page__prize-teaser-img">
+                        <div class="form-page__prize-teaser-body">
+                            <span class="form-page__prize-teaser-badge">🎁 Sorteio exclusivo</span>
+                            <p>Apoie o projeto e concorra ao <strong>livro mais cobiçado da medicina</strong> (Porto
+                                &amp; Porto) só por preencher!</p>
+                        </div>
+                    </div>
+
                     <div class="form-page__step-actions">
                         <button type="button" id="btn-next-step1" class="form-page__btn-next" data-next="1">
                             <div><span>Continuar</span></div>
@@ -305,8 +316,19 @@
                                 <span>Sorteio exclusivo</span>
                             </div>
                             <h2>Você está concorrendo!</h2>
-                            <p>Ao preencher, você ganhou um número da sorte para concorrer ao sorteio de um livro
-                                exclusivo.</p>
+
+                            <!-- Book reveal -->
+                            <div class="form-page__raffle-book">
+                                <img src="./assets/livro-sorteio.jpg" alt="Semiologia Médica — Porto &amp; Porto"
+                                    class="form-page__raffle-book-img">
+                                <div class="form-page__raffle-book-info">
+                                    <span class="form-page__raffle-book-label">O prêmio é</span>
+                                    <strong>Porto &amp; Porto</strong>
+                                    <span>Semiologia Médica — 9ª edição</span>
+                                </div>
+                            </div>
+
+                            <p>Preencher o formulário te deu um número da sorte. <strong>Guarde-o!</strong></p>
                             <div class="form-page__raffle-number-box">
                                 <span class="form-page__raffle-label">Seu número da sorte</span>
                                 <span class="form-page__raffle-number" id="raffle-number">------</span>

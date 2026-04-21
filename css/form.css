@@ -954,3 +954,119 @@
         font-size: 14px;
     }
 }
+
+/* ── Prize Teaser (Step 1) ── */
+
+.form-page__prize-teaser {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(0, 116, 129, 0.06), rgba(154, 193, 222, 0.12));
+    border: 1.5px solid rgba(0, 116, 129, 0.15);
+    cursor: default;
+}
+
+.form-page__prize-teaser-img {
+    width: 56px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.form-page__prize-teaser-body {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-page__prize-teaser-badge {
+    font-family: var(--font-family-primary);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-primary-800);
+}
+
+.form-page__prize-teaser-body>p {
+    font-family: var(--font-family-primary);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    color: var(--color-neutral-700);
+
+    &>strong {
+        font-weight: 600;
+        color: var(--color-neutral-900);
+    }
+}
+
+/* ── Raffle Book Reveal (Step 3) ── */
+
+.form-page__raffle-book {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 24px;
+    border-radius: 16px;
+    background-color: var(--color-neutral-0);
+    border: 1.5px solid rgba(0, 116, 129, 0.15);
+    width: 100%;
+    text-align: left;
+
+    @media (max-width: 768px) {
+        gap: 16px;
+        padding: 16px 18px;
+    }
+}
+
+.form-page__raffle-book-img {
+    width: 72px;
+    height: 96px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
+
+    @media (max-width: 768px) {
+        width: 60px;
+        height: 80px;
+    }
+}
+
+.form-page__raffle-book-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.form-page__raffle-book-label {
+    font-family: var(--font-family-primary);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-primary-600, var(--color-primary-500));
+}
+
+.form-page__raffle-book-info>strong {
+    font-family: var(--font-family-primary);
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--color-neutral-900);
+    line-height: 1.2;
+}
+
+.form-page__raffle-book-info>span {
+    font-family: var(--font-family-primary);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color-neutral-500);
+    letter-spacing: -0.02em;
+}
